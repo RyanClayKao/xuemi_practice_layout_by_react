@@ -16,6 +16,18 @@
   cursor: pointer;
 }
 
+.search > input[type="text"] {
+  border: none;
+  outline: none;
+  width: 0px;
+  transition: width 0.3s;
+}
+
+.search > input[type="text"].open {
+  padding: 5px 10px;
+  width: 200px;
+}
+
 .navigation > ul {
   padding: 0px;
   margin: 0px;

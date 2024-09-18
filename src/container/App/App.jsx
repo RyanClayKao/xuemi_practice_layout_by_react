@@ -1,28 +1,40 @@
+import { useState } from "react";
 import Logo from "./logo.png";
 import "./App.css";
 
 function App() {
+  const [searchStart, setSearchStart] = useState(false);
+
 
   return (
     <div>
-      <header style={{
-        padding: 60,
-      }}>
-        <div style={{
-          display: "flex",
-          justifyContent: "space-between",
-        }}>
+      <header
+        style={{
+          padding: 60,
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
           <div>
             <img src={Logo} alt="Logo" />
           </div>
-          <div style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}>
-            <div className="search">搜尋</div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <div className="search">
+              <i className="fa-solid fa-magnifying-glass" onClick={() => setSearchStart(!searchStart)}></i>
+              <input type="text" className={searchStart ? 'open' : ''} placeholder="搜尋網站目標" />
+            </div>
             <div className="navigation">
-              <ul >
+              <ul>
                 <li>Recipes</li>
                 <li>Dinner TV</li>
                 <li>Cooking School</li>
@@ -36,7 +48,7 @@ function App() {
         </div>
       </header>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
