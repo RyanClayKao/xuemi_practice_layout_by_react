@@ -1,5 +1,5 @@
 import Logo from "./logo.png";
-
+import "./App.css";
 
 function App() {
 
@@ -20,12 +20,9 @@ function App() {
             justifyContent: "space-between",
             alignItems: "center",
           }}>
-            <div>搜尋</div>
-            <div>
-              <ul style={{
-                display: "flex",
-                listStyle: "none",
-              }}>
+            <div className="search">搜尋</div>
+            <div className="navigation">
+              <ul >
                 <li>Recipes</li>
                 <li>Dinner TV</li>
                 <li>Cooking School</li>
@@ -33,15 +30,7 @@ function App() {
               </ul>
             </div>
             <div>
-              <button style={{
-                color: "white",
-                border: "none",
-                padding: "10px 25px",
-                backgroundColor: "#3B7844",
-                borderRadius: 3,
-                outline: "none",
-                cursor: "pointer",
-              }}>Sign In</button>
+              <button className="sign-in-btn">Sign In</button>
             </div>
           </div>
         </div>
