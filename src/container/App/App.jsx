@@ -1,33 +1,24 @@
 import { useState } from "react";
 import Logo from "./logo.png";
-import "./App.css";
+import {
+  StyledAppHeader,
+  StyledAppHeaderNavigationBar,
+  StyledSignInButton,
+  StyledAppHeaderContent,
+  StyledExploerButton
+ } from "./App.styled";
 
 function App() {
   const [searchStart, setSearchStart] = useState(false);
 
   return (
     <div>
-      <header
-        style={{
-          padding: 60,
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-          }}
-        >
+      <StyledAppHeader>
+        <StyledAppHeaderNavigationBar>
           <div>
             <img src={Logo} alt="Logo" />
           </div>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
+          <div className="navigation-list">
             <div className="search">
               <i
                 className="fa-solid fa-magnifying-glass"
@@ -48,51 +39,23 @@ function App() {
               </ul>
             </div>
             <div>
-              <button className="sign-in-btn">Sign In</button>
+              <StyledSignInButton>Sign In</StyledSignInButton>
             </div>
           </div>
-        </div>
-        <div
-          style={{
-            marginTop: 110,
-          }}
-        >
-          <div
-            style={{
-              fontSize: 48,
-              fontWeight: 600,
-            }}
-          >
-            Let's Get Cooking!
-          </div>
-          <div
-            style={{
-              marginTop: 55,
-              fontSize: 16,
-              lineHeight: 2,
-            }}
-          >
+        </StyledAppHeaderNavigationBar>
+        <StyledAppHeaderContent>
+          <div className="content-title">Let's Get Cooking!</div>
+          <div className="content-text">
             <div>Explore the best recipes from around thr world.</div>
             <div>Make cooking enjoyable again.</div>
           </div>
-          <button
-            style={{
-              marginTop: 65,
-              padding: "10px 25px",
-              backgroundColor: "#3B7844",
-              border: "none",
-              color: "white",
-              borderRadius: 2,
-              outline: "none",
-              cursor: "pointer",
-            }}
-          >
-            Explore Recipes
-          </button>
-        </div>
-      </header>
+          <StyledExploerButton>Explore Recipes</StyledExploerButton>
+        </StyledAppHeaderContent>
+      </StyledAppHeader>
     </div>
   );
 }
 
 export default App;
+
+
